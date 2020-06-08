@@ -12,7 +12,17 @@ public class Linkman {
     private String qq;
 
     private Integer userId;
-
+    
+    private User user;
+    
+    public void setUser(User user) {
+		this.user = user;
+	}
+    public User getUser() {
+		return user;
+	}
+    
+    
     public Integer getId() {
         return id;
     }

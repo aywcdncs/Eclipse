@@ -1,20 +1,55 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.qakj.crm.mapper.LinkmanMapper" >
-  <resultMap type="BaseResultMap2" id="com.qakj.crm.pojo.Linkman">
-  	<id column="id" property="id" jdbcType="INTEGER" />
+
+<!--  错的<resultMap type="BaseResultMap2" id="com.qakj.crm.pojo.Linkman">-->  	
+	<resultMap id="BaseResultMap2" type="com.qakj.crm.pojo.Linkman" >
+    <id column="id" property="id" jdbcType="INTEGER" />
     <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="phone" property="phone" jdbcType="VARCHAR" />
     <result column="email" property="email" jdbcType="VARCHAR" />
     <result column="qq" property="qq" jdbcType="VARCHAR" />
     <result column="user_id" property="userId" jdbcType="INTEGER" />
-    
+    <association property="user" javaType="com.qakj.crm.pojo.User">
+   		<id column="id" property="id" jdbcType="INTEGER" />
+	    <result column="username" property="username" jdbcType="VARCHAR" />
+	    <result column="password" property="password" jdbcType="VARCHAR" />
+	    <result column="name" property="name" jdbcType="VARCHAR" />
+	    <result column="age" property="age" jdbcType="INTEGER" />
+	    <result column="email" property="email" jdbcType="VARCHAR" />
+	    <result column="role" property="role" jdbcType="INTEGER" />
+   
+    </association>
   </resultMap>
+  
+  
+  <!-- <resultMap id="BaseResultMap2" type="com.qakj.crm.pojo.Linkman" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="qq" property="qq" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <association property="user" javaType="com.qakj.crm.pojo.User">
+    	<id column="id" property="id" jdbcType="INTEGER" />
+	    <result column="username" property="username" jdbcType="VARCHAR" />
+	    <result column="password" property="password" jdbcType="VARCHAR" />
+	    <result column="name" property="name" jdbcType="VARCHAR" />
+	    <result column="age" property="age" jdbcType="INTEGER" />
+	    <result column="email" property="email" jdbcType="VARCHAR" />
+	    <result column="role" property="role" jdbcType="INTEGER" />
+    </association>
+  </resultMap> -->
   
   
   <select id="getLinkmans" resultMap="BaseResultMap2">
   	SELECT * FROM linkman,users WHERE linkman.user_id=users.id;
   </select>
+  
+  
+ 
+  
+  
   
   <resultMap id="BaseResultMap" type="com.qakj.crm.pojo.Linkman" >
     <id column="id" property="id" jdbcType="INTEGER" />
