@@ -57,4 +57,9 @@ public class CustomerController {
 		return "信息修改成功！！";
 		
 	}
+	@RequestMapping("/add")
+	public Object add(Customer customer){
+		customerService.addCustomer(customer);
+		return "添加成功了呦！！";
+	}
 }

@@ -15,6 +15,8 @@ public interface CustomerService {
 	
 	void updateCustomerById(Customer customer);
 	
+	void addCustomer(Customer customer);
+	
 	/*List<Customer> getCustomer(int currentPage,int pageSize,String searchName);
 	
 	int getCount(String searchName);

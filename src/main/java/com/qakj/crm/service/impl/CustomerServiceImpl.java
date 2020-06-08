@@ -47,4 +47,10 @@ public class CustomerServiceImpl implements CustomerService{
 	public void updateCustomerById(Customer customer) {
 		customerMapper.updateByPrimaryKeySelective(customer);
 	}
+
+	@Override
+	public void addCustomer(Customer customer) {
+		customerMapper.insertSelective(customer);
+		
+	}
 }
