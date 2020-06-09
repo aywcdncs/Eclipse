@@ -38,7 +38,7 @@ public class GoodsController {
 		goodsService.addGoods(goods);
 		return "添加成功";
 	}
-	
+	   
 	@RequestMapping("/delGoods/{id}")
 	public Object delGoods(@PathVariable("id") Integer id){
 		goodsService.deleteGoods(id);
