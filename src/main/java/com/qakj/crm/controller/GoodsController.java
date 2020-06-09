@@ -31,6 +31,7 @@ public class GoodsController {
 			return map;
 		}
 		return null;
+		
 	}
 	
 	@RequestMapping("/addGoods")
